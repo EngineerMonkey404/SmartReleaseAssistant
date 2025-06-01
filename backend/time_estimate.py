@@ -8,7 +8,7 @@ from dataclasses import dataclass
 
 # CONFLUENCE_PAGE_ID = "1048587"
 
-CONFLUENCE_URL = "http://localhost:8090"
+CONFLUENCE_URL = "https://confluence.wex-web.ru:8090/"
 CONFLUENCE_USERNAME = "admin"
 CONFLUENCE_PASSWORD = "admin"
 
@@ -21,8 +21,6 @@ class ModelArch(str, Enum):
 
 
 DEFAULT_TEMP = 0.2
-
-
 
 
 def get_ml_sdk():

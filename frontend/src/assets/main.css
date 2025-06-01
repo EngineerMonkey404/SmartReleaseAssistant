@@ -1,13 +1,95 @@
 @import './base.css';
 
-.main-container {
+body {
+    background: #EEAECA;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+.estimate-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: var(--vt-c-black);
-  color: var(--vt-c-white);
-  width: 100vw;
+  justify-content: center;
   height: 100vh;
-  gap: 10px;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+
+.task-label {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+
+.task-input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 0.8rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-family: 'SF Mono', monospace;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+
+.estimate-button {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.estimate-button:hover {
+  background: linear-gradient(135deg, #3182ce, #2b6cb0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(66, 153, 225, 0.4);
+}
+
+.estimate-button:active {
+  transform: translateY(0);
+}
+
+
+.estimate-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.estimate-button.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
